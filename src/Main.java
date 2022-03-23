@@ -1,3 +1,4 @@
+import static math.Solver.solveEquation;
 import static utils.IOUnit.*;
 
 public class Main {
@@ -7,6 +8,7 @@ public class Main {
         byte mode = chooseMode(), id;
         if (mode == 0) {
             id = chooseEquation();
+            System.out.println(solveEquation(id));
         } else {
             id = chooseSystems();
         }
