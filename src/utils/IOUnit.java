@@ -3,15 +3,13 @@ package utils;
 import java.util.Scanner;
 
 public class IOUnit {
-    private static Scanner reader = new Scanner(System.in);
+    private static final Scanner reader = new Scanner(System.in);
 
-    private static void handleError(String msg, boolean isInteractive) {
+    private static void handleError(String msg) {
         System.out.println(msg);
-        if (isInteractive) {
-            System.out.println("Enter = повторить ввод, любая другая клавиша + Enter = выход:");
-            if (reader.nextLine().isEmpty()) {
-                return;
-            }
+        System.out.println("Enter = повторить ввод, любая другая клавиша + Enter = выход:");
+        if (reader.nextLine().isEmpty()) {
+            return;
         }
         System.out.println("Программа завершает работу.");
         System.exit(-1);
@@ -29,7 +27,7 @@ public class IOUnit {
                 }
                 break;
             } catch (NumberFormatException e) {
-                handleError("Ошибка ввода! Требуется ввести 0 для решения нелинейного уравнения, 1 - для системы нелинейных уравнений.", true);
+                handleError("Ошибка ввода! Требуется ввести 0 для решения нелинейного уравнения, 1 - для системы нелинейных уравнений.");
             }
         }
         return mode;
@@ -48,7 +46,7 @@ public class IOUnit {
                 }
                 break;
             } catch (NumberFormatException e) {
-                handleError("Ошибка ввода! Требуется ввести целое число от 1 до 5.", true);
+                handleError("Ошибка ввода! Требуется ввести целое число от 1 до 5 - номер нужного уравнения.");
             }
         }
         return id;
@@ -67,7 +65,7 @@ public class IOUnit {
                 }
                 break;
             } catch (NumberFormatException e) {
-                handleError("Ошибка ввода! Требуется ввести целое число от 1 до 5.", true);
+                handleError("Ошибка ввода! Требуется ввести целое число от 1 до 5 - номер нужной системы.");
             }
         }
         return id;
