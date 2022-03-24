@@ -56,21 +56,6 @@ public class Solver {
         return (b + a) / 2;
     }
 
-    /*
-    private static double secantMethod(double a, double b, NonlinearEq eq, double eps) {
-        double c = 0;
-        while (Math.abs(eq.getResult(b) - eq.getResult(a)) > eps) {
-            c = (eq.getResult(b) * a - eq.getResult(a) * b) / (eq.getResult(b) - eq.getResult(a));
-            if ((eq.getResult(a) * eq.getResult(c)) > 0) {
-                a = c;
-            } else {
-                b = c;
-            }
-        }
-        return c;
-    }
-    */
-
     public static double secantMethod (double a, double b, NonlinearEq eq, double eps) {
         double prevX, currX = 0;
         boolean isFirstIter = true;
